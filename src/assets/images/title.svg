@@ -3,11 +3,23 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #eeff12;
+        fill: #fff;
+      }
+
+      .cls-1, .cls-2 {
         font-family: FZ-SG-PAG-Transformacio, 'FZ-SG PAG Transformacio';
-        font-size: 58.27px;
+        font-size: 61.12px;
+      }
+
+      .cls-2 {
+        fill: #f9ff00;
+        stroke: #f9ff00;
+        stroke-linecap: round;
+        stroke-linejoin: bevel;
+        stroke-width: 10px;
       }
     </style>
   </defs>
-  <text class="cls-1" transform="translate(94.16 84.68)"><tspan x="0" y="0">TẠP HÓA DLC</tspan></text>
+  <text class="cls-2" transform="translate(86.64 83.31)"><tspan x="0" y="0">TẠP HÓA DLC</tspan></text>
+  <text class="cls-1" transform="translate(86.64 83.31)"><tspan x="0" y="0">TẠP HÓA DLC</tspan></text>
 </svg>
