@@ -87,6 +87,27 @@ export default class SoundEffects {
    * Play the winning sound effect
    * @returns Has sound effect been played
    */
+  public winsound(): Promise<boolean> {
+    if (this.isMuted) {
+      return Promise.resolve(false);
+    }
+  
+    // Đặt đường dẫn đúng tới file âm thanh 'abc.mp3' trong thư mục /assets/images/
+    const audio = new Audio('../src/assets/images/abc.mp3');
+  
+    // Phát âm thanh
+    audio.play();
+  
+    // Lấy thời gian tổng cộng của âm thanh để trả về trong Promise
+    const totalDuration = audio.duration * 1000;
+  
+    return new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        resolve(true);
+      }, totalDuration);
+    });
+  }
+
   public win(): Promise<boolean> {
     if (this.isMuted) {
       return Promise.resolve(false);

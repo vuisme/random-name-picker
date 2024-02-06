@@ -89,7 +89,7 @@ import SoundEffects from '@js/SoundEffects';
   const onSpinEnd = async () => {
     confettiAnimation();
     sunburstSvg.style.display = 'block';
-    await soundEffects.win();
+    await soundEffects.winsound();
     drawButton.disabled = false;
     settingsButton.disabled = false;
   };
