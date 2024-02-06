@@ -93,7 +93,7 @@ export default class SoundEffects {
     }
   
     // Đặt đường dẫn đúng tới file âm thanh 'abc.mp3' trong thư mục /assets/images/
-    const audio = new Audio('../src/assets/images/abc.mp3');
+    const audio = new Audio('winner.mp3');
   
     // Phát âm thanh
     audio.play();
