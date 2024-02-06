@@ -91,7 +91,6 @@ export default class SoundEffects {
     if (this.isMuted) {
       return Promise.resolve(false);
     }
-  
     // Đặt đường dẫn đúng tới file âm thanh 'abc.mp3' trong thư mục /assets/images/
     const audio = new Audio('winner.mp3');
     // Phát âm thanh
