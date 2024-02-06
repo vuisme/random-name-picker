@@ -94,13 +94,10 @@ export default class SoundEffects {
   
     // Đặt đường dẫn đúng tới file âm thanh 'abc.mp3' trong thư mục /assets/images/
     const audio = new Audio('winner.mp3');
-  
     // Phát âm thanh
     audio.play();
-  
     // Lấy thời gian tổng cộng của âm thanh để trả về trong Promise
     const totalDuration = audio.duration * 1000;
-  
     return new Promise<boolean>((resolve) => {
       setTimeout(() => {
         resolve(true);
