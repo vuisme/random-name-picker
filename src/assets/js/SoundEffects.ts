@@ -140,9 +140,9 @@ export default class SoundEffects {
     }
 
     const musicNotes: SoundSeries[] = [
-      { key: 'D#3', duration: 0.1 },
-      { key: 'C#3', duration: 0.1 },
-      { key: 'C3', duration: 0.1 }
+      { key: 'A#4', duration: 0.1 },
+      { key: 'A#3', duration: 0.1 },
+      { key: 'A3', duration: 0.1 }
     ];
 
     const totalDuration = musicNotes
