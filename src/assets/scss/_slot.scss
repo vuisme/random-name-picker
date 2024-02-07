@@ -16,7 +16,6 @@
 
   @each $media-query, $factor in $scale-factors {
     @media #{$media-query} {
-      max-width: $title-width * $factor;
       margin: $title-margin-top 0 $title-margin-bottom * $factor 0;
     }
   }
