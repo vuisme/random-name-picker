@@ -134,15 +134,16 @@ export default class SoundEffects {
    * @param durationInSecond  Duration of sound effect in seconds
    * @returns Has sound effect been played
    */
+  
   public spin(durationInSecond: number): Promise<boolean> {
     if (this.isMuted) {
       return Promise.resolve(false);
     }
 
     const musicNotes: SoundSeries[] = [
-      { key: 'G5', duration: 0.1 },
-      { key: 'G5', duration: 0.1 },
-      { key: 'G5', duration: 0.1 }
+      { key: 'A#4', duration: 0.1 },
+      { key: 'A#3', duration: 0.1 },
+      { key: 'A3', duration: 0.1 }
     ];
 
     const totalDuration = musicNotes
@@ -158,6 +159,23 @@ export default class SoundEffects {
       setTimeout(() => {
         resolve(true);
       }, totalDuration * 1000);
+    });
+  }
+
+  public spinSound(): Promise<boolean> {
+    if (this.isMuted) {
+      return Promise.resolve(false);
+    }
+    // Đặt đường dẫn đúng tới file âm thanh 'abc.mp3' trong thư mục /assets/images/
+    const audio = new Audio('spin.mp3');
+    // Phát âm thanh
+    audio.play();
+    // Lấy thời gian tổng cộng của âm thanh để trả về trong Promise
+    const totalDuration = audio.duration * 1000;
+    return new Promise<boolean>((resolve) => {
+      setTimeout(() => {
+        resolve(true);
+      }, totalDuration);
     });
   }
 }
