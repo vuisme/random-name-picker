@@ -166,14 +166,36 @@ export default class SoundEffects {
     if (this.isMuted) {
       return Promise.resolve(false);
     }
-    // Đặt đường dẫn đúng tới file âm thanh 'abc.mp3' trong thư mục /assets/images/
+  
+    // Đặt đường dẫn đúng tới file âm thanh 'spin.mp3' trong thư mục /assets/images/
     const audio = new Audio('spin.mp3');
+  
+    // Hàm để xử lý sự kiện khi âm thanh kết thúc
+    const handleAudioEnd = () => {
+      // Reset thời gian của âm thanh để nó có thể được phát lại từ đầu
+      audio.currentTime = 0;
+      // Phát lại âm thanh
+      audio.play();
+    };
+  
+    // Gán hàm xử lý sự kiện cho sự kiện 'ended'
+    audio.addEventListener('ended', handleAudioEnd);
+  
     // Phát âm thanh
     audio.play();
+  
     // Lấy thời gian tổng cộng của âm thanh để trả về trong Promise
     const totalDuration = durationInSecond * 1000;
+  
+    // Trả về Promise
     return new Promise<boolean>((resolve) => {
       setTimeout(() => {
+        // Ngừng lắng nghe sự kiện 'ended' khi hết thời gian
+        audio.removeEventListener('ended', handleAudioEnd);
+        // Dừng âm thanh
+        audio.pause();
+        // Reset thời gian của âm thanh để chuẩn bị cho lần phát tiếp theo
+        audio.currentTime = 0;
         resolve(true);
       }, totalDuration);
     });
