@@ -162,7 +162,7 @@ export default class SoundEffects {
     });
   }
 
-  public spinSound(): Promise<boolean> {
+  public spinSound(durationInSecond: number): Promise<boolean> {
     if (this.isMuted) {
       return Promise.resolve(false);
     }
@@ -171,7 +171,7 @@ export default class SoundEffects {
     // Phát âm thanh
     audio.play();
     // Lấy thời gian tổng cộng của âm thanh để trả về trong Promise
-    const totalDuration = audio.duration * 1000;
+    const totalDuration = durationInSecond * 1000;
     return new Promise<boolean>((resolve) => {
       setTimeout(() => {
         resolve(true);

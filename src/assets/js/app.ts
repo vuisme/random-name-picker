@@ -82,7 +82,7 @@ import SoundEffects from '@js/SoundEffects';
     stopWinningAnimation();
     drawButton.disabled = true;
     settingsButton.disabled = true;
-    soundEffects.spinSound();
+    soundEffects.spin((MAX_REEL_ITEMS - 1) / 10);
   };
 
   /**  Functions to be trigger after spinning */
